@@ -35,7 +35,7 @@
 }
 
 .card {
-  margin: auto;
+  margin: 1rem auto;
 }
 
 .card-img-top {
@@ -46,4 +46,10 @@
 
 .jumbotron {
   text-align: center;
+}
+
+.row {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
