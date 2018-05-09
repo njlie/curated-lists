@@ -13,26 +13,146 @@
       <p class="navbar-brand" href="#">Cool Compilations for Cool People</p>
     </nav>
     <div class="container">
-      <a class="headerImage" href="/category/Music">
-        <i class="fas fa-music fa-10x"></i>
-        <div class="headerText h3">Music</div>
-      </a>
-      <a class="headerImage" href="/category/Videos">
-        <i class="fas fa-video fa-10x"></i>
-        <div class="headerText h3">Video</div>
-      </a>
-      <a class="headerImage" href="/category/Images">
-        <i class="fas fa-images fa-10x"></i>
-        <div class="headerText h3">Images</div>
-      </a>
-      <a class="headerImage" href="/category/Blogs">
-        <i class="fas fa-newspaper fa-10x"></i>
-        <div class="headerText h3">Blogging</div>
-      </a>
-      <a class="headerImage" href="/category/Games">
-        <i class="fas fa-gamepad fa-10x"></i>
-        <div class="headerText h3">Games</div>
-      </a>
+      <div style="padding: 1rem;">
+        <ul class="nav nav-tabs" id="curatedTab" role="tabList">
+          <li class="nav-item">
+            <a class="nav-link active" id="music-tab" data-toggle="tab" href="#music" role="tab" aria-controls="music" aria-selected="true"><i class="fas fa-music fa-xs tab-list"></i>Music</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false"><i class="fas fa-video fa-xs tab-list"></i>Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="image-tab" data-toggle="tab" href="#image" role="tab" aria-controls="image" aria-selected="false"><i class="fas fa-image fa-xs tab-list"></i>Images</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="blog-tab" data-toggle="tab" href="#blog" role="tab" aria-controls="tab" aria-selected="false"><i class="fas fa-newspaper fa-xs tab-list"></i>Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="game-tab" data-toggle="tab" href="#game" role="tab" aria-controls="tab" aria-selected="false"><i class="fas fa-gamepad fa-xs tab-list"></i>Games</a>
+          </li>
+        </ul>
+        <div class="tab-content border" id="tabContent" style="height: 36rem; overflow: scroll;">
+          <div class="tab-pane fade show active" id="music" role="tabpanel" aria-labelledby="music-tab">
+            <div class="card" style="width: 36rem;">
+              <div class="card-header">
+                List Header
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem Ipsum Dude</p>
+                <p class="card-text">Lorem Ipsum Buddy</p>
+              </div>
+            </div>
+            <div class="card" style="width: 36rem;">
+              <div class="card-header">
+                List Header
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem Ipsum Dude</p>
+                <p class="card-text">Lorem Ipsum Buddy</p>
+              </div>
+            </div>
+            <div class="card" style="width: 36rem;">
+              <div class="card-header">
+                List Header
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem Ipsum Dude</p>
+                <p class="card-text">Lorem Ipsum Buddy</p>
+              </div>
+            </div>
+            <div class="card" style="width: 36rem;">
+              <div class="card-header">
+                List Header
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem Ipsum Dude</p>
+                <p class="card-text">Lorem Ipsum Buddy</p>
+              </div>
+            </div>
+            <div class="card" style="width: 36rem;">
+              <div class="card-header">
+                List Header
+              </div>
+              <div class="card-body">
+                <p class="card-text">Lorem Ipsum Dude</p>
+                <p class="card-text">Lorem Ipsum Buddy</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="video" role="tabpanel" aria-labelledby="video-tab">
+            <div class="accordion" id="accordionVideo">
+              <div class="card" style="width: 36rem;">
+                <div class="card-header" id="videoHeadingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#videoOne" aria-expanded="true" aria-controls="videoOne">
+                      List Header
+                    </button>
+                  </h5>
+                </div>
+                <div id="videoOne" class="collapse show" aria-labelledby="videoHeadingOne" data-parent="#accordionVideo">
+                  <div class="card-body">
+                    <iframe style="width: 32rem;" height="315" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="image" role="tabpanel" aria-labelledby="image-tab">
+            <div class="accordion" id="accordionImage">
+              <div class="card" style="width: 36rem;">
+                <div class="card-header" id="imageHeadingOne">
+                  <h5 class="md-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#imageOne" aria-expanded="true" aria-controls="imageOne">
+                      List Header
+                    </button>
+                  </h5>
+                </div>
+                <div id="imageOne" class="collapse show" aria-labelledby="imageHeadingOne" data-parent="accordionImage">
+                  <div class="card-body">
+                    <p class="card-text">Item 1</p>
+                    <p class="card-test">Item 2</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="blog" role="tabpanel" aria-labelledby="blog-tab">
+            <div class="accordion" id="accordionTest">
+              <div class="card" style="width: 36rem;">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      List Header
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionTest">
+                  <div class="card-body">
+                    <p class="card-text">Lorem Ipsum Dude</p>
+                    <p class="card-text">Lorem Ipsum Buddy</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card" style="width: 36rem;">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      List Header
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionTest">
+                  <div class="card-body">
+                    <p class="card-text">Lorem Ipsum Dude</p>
+                    <p class="card-text">Lorem Ipsum Buddy</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade show" id="game" role="tabpanel" aria-labelledby="game-tab">Game tab</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
