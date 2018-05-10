@@ -2,26 +2,36 @@ head
   script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
   script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
   link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
   link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous")
   link(rel="stylesheet" href="/style.css")
   
 body
   nav.navbar.navbar-dark.bg-dark(id="header")
     p.navbar-brand Cool Compilations for Cool People
+  nav(aria-label="breadcrumb")
+    ol.breadcrumb
+      li.breadcrumb-item
+        a(href="/") Home
+      li.breadcrumb-item.active(aria-current="page") #{title}
   div.container
     div.headerImage
       i.fas.fa-10x(class="fa-" + icon)
         div.headerText.h3 #{title}
-    div(style="text-align: left; overflow: scroll; height: 25rem; margin-bottom: 2rem;")
-      while n < 100
-        div.card(style="width: 36rem;")
-          div.card-header List #{n++}
-          div.card-body
-
-            ul.list-group
-              .list-group-item Item 1
-              .list-group-item Item 2
-              .list-group-item Item 3
-              .list-group-item Item 4
-              .list-group-item Item 5
+    div.border(style="text-align: left; overflow: scroll; height: 25rem; margin-bottom: 2rem;")
+      div.accordion(id="accordionCategory")
+        while n < 100
+          div.card(style="width: 36rem;")
+            div.card-header(id="heading"+n)
+              h5.mb-0
+                button.btn.btn-link.collapsed(type="button" data-toggle="collapse" data-target="#collapse"+n aria-expanded="false" aria-controls="collapse"+n) List #{n}
+            div.collapse(id="collapse"+n, aria-labelledby="heading"+n, data-parent="#accordionCategory")
+              div(style="display: none;") #{n++}
+              div.card-body
+                ul.list-group
+                  .list-group-item Item 1
+                  .list-group-item Item 2
+                  .list-group-item Item 3
+                  .list-group-item Item 4
+                  .list-group-item Item 5
 
