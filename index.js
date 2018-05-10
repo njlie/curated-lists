@@ -13,8 +13,7 @@ router.get('/style.css', async ctx => {
 })
 
 router.get('/', async ctx => {
-  ctx.set('content-type', 'text/html')
-  ctx.body = fs.readFileSync(path.resolve(__dirname, './public/index.html'))
+  await ctx.render('index')
 })
 
 router.get('/category/:category', async ctx => {
