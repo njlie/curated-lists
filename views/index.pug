@@ -14,8 +14,51 @@ html
       a.headerImage(style="width: 100%")
         i.fas.fa-music.fa-10x
         div.headerText.h3 Music
-          div.border(style="text-align: left; overflow: scroll; height: 25rem; margin: 2rem 0;")
+        div.border(style="text-align: left; overflow: scroll; height: 25rem; margin: 2rem 0;")
+          div.accordion(id="accordionMusic")
+            div.card(style="width: 36rem;")
+              div.card-header(id="musicHeaderOne")
+                h5.mb-0
+                  button.btn.btn-link.collapsed(type="button", data-toggle="collapse" data-target="#musicOne", aria-expanded="false", aria-controls="musicOne") List 0
+              div.collapse(id="musicOne", aria-labelledby="musicHeadingOne", data-parent="#accordionMusic")
+                div.card-body
+                  ul.list-group
+                    .list-group-item Item 1
+                    .list-group-item Item 2
+                    .list-group-item Item 3
+                    .list-group-item Item 4
+                    .list-group-item Item 5
       a.headerImage(style="width: 100%")
         i.fas.fa-video.fa-10x
-        div.headerText.h3 Video
-          div.border(style="text-align: left; overflow: scroll; height: 25rem; margin: 2rem 0;")
+        h3.headerText Video
+        div.border(style="text-align: left; overflow: scroll; height: 25rem; margin: 2rem 0;")
+          div.accordion(id="accordionVideo")
+            div.card(style="width: 36rem;")
+              div.card-header(id="videoHeadingOne")
+                h5.mb-0
+                  button.btn.btn-link.collapsed(type="button", data-toggle="collapse" data-target="#videoOne", aria-expanded="false", aria-controls="videoOne") List 0
+              div.collapse(id="videoOne", aria-labelledby="videoHeadingOne", data-parent="#accordionVideo")
+                div.card-body
+                  ul.list-group
+                    .list-group-item Item 1
+                    .list-group-item Item 2
+                    .list-group-item Item 3
+                    .list-group-item Item 4
+                    .list-group-item Item 5
+      a.headerImage(style="width: 100%")
+        i.fas.fa-image.fa-10x
+        h3.headerText Images
+        div.border(style="text-align: left; overflow: scroll; height: 25rem; margin: 2rem 0;")
+          div.accordion(id="accordionImage")
+            div.card(style="width: 36rem;")
+              div.card-header(id="imageHeadingOne")
+                h5.mb-0
+                  button.btn.btn-link.collapsed(type="button", data-toggle="collapse" data-target="#imageOne", aria-expanded="false", aria-controls="imageOne") List 0
+              div.collapse(id="imageOne", aria-labelledby="imageHeadingOne", data-parent="#accordionImage")
+                div.card-body
+                  ul.list-group
+                    .list-group-item Item 1
+                    .list-group-item Item 2
+                    .list-group-item Item 3
+                    .list-group-item Item 4
+                    .list-group-item Item 5
