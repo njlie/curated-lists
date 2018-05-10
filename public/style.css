@@ -57,6 +57,10 @@ a:hover, .headerimage {
   transform: scale(1.05);
 }
 
+.fas, .tab-list {
+  margin-right: 0.5rem;
+}
+
 .row {
   overflow-x: scroll;
   overflow-y: hidden;
