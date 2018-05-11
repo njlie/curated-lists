@@ -19,6 +19,10 @@ html
               span.sr-only (current)
           li.nav-item
             a.nav-link(id="addPost") Add List
+          li.nav-item
+            a.nav-link(id="login" href="/account/signin") Sign In
+          li.nav-item
+            a.nav-link(id="create" href="/account/signup") Create an Account
     div.container(id="toolbar-container" style="text-align: center;")
       span(class="toolbar", data-index="0")
         i.fas.fa-lg.fa-music(style="margin-right: 0.5rem;")
@@ -59,13 +63,11 @@ html
           this.classList.add('active')
         }
         const selected = document.querySelectorAll('.toolbar.active')
-        console.log(selected)
         var activated = []
         for(var i = 0; i < selected.length; ++i) {
           console.log(selected[i].dataset.index)
           activated.push(selected[i].dataset.index)
         }
-        console.log('activated: ', activated)
         var cards = []
         var max = 5
         if (paid) {
