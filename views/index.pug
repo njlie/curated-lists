@@ -17,8 +17,8 @@ html
           li.nav-item.active
             a.nav-link(href="#") Home
               span.sr-only (current)
-          li.nav-item
-            a.nav-link(id="addPost") Add List
+          //- li.nav-item
+          //-   a.nav-link(id="addPost") Add List
           li.nav-item
             a.nav-link(id="login" href="/account/signin") Sign In
           li.nav-item
@@ -106,7 +106,7 @@ html
       }).then(() => {
         paid = true
         document.getElementById('toolbar-container').append('Thanks for paying!')
-        document.getElementById('addPost').setAttribute('href', '/post')
+        // document.getElementById('addPost').setAttribute('href', '/post')
         cards = []
         for(var index = 0; index < rand.length; ++index) {
           var cat = categories[rand[index]]
