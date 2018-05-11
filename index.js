@@ -37,6 +37,14 @@ router.get('/post', async ctx => {
   await ctx.render('post')
 })
 
+router.get('/account/signin', async ctx => {
+  await ctx.render('signin')
+})
+
+router.get('/account/signup', async ctx => {
+  await ctx.render('signup')
+})
+
 router.get('/category/:category', async ctx => {
   console.log(ctx.params.category)
   if (!data.categories.find(e => e === ctx.params.category)) {
