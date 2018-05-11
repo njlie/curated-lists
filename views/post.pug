@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous")
+    link(rel="stylesheet" href="/style.css")
+  body
+    nav.navbar.navbar-dark.bg-dark(id="header")
+      p.navbar-brand Cool Compliations for Cool People
+    nav(aria-label="breadcrumb")
+      ol.breadcrumb
+        li.breadcrumb-item
+          a(href="/") Home
+        li.breadcrumb-item.active(aria-current="page") Add List
+    div.container(style="text-align: left; padding: 2rem;")
+      form
+        div.form-group
+          label(for="nameInput") List Name
+          input.form-control(id="nameInput", type="text")
+        div.form-group
+          label(for="categoryInput") Category
+          select.form-control(id="categoryInput")
+           option Music
+           option Videos
+           option Images
+           option Blogs
+           option Games
+        div.form-group(id="listGroup")
+          label(for="listInput0") List Items
+          div
+            a.btn.btn-secondary.btn-sm(id="addButton" style="color: white;")
+              i.fa.fa-plus 
+            a.btn.btn-secondary.btn-sm(id="removeButton" style="color: white;")
+              i.fa.fa-minus
+          input.form-control(id="listInput0", type="text")
+        button.btn.btn-primary(type="submit") Submit
+  script.
+    function addList() {
+      let formGroup = document.getElementById('listGroup')
+      let group = formGroup.children
+      let inputs = 0
+      for (let i = 0; i < group.length; ++i) {
+        if (group[i].nodeName === 'INPUT') {
+          inputs++
+        }
+      }
+      console.log(inputs)
+      let newForm = document.createElement('INPUT')
+      newForm.classList.add('form-control')
+      newForm.setAttribute('id', `listInput${inputs+1}`)
+      newForm.setAttribute('type', 'text')
+      console.log(newForm)
+      formGroup.appendChild(newForm)
+    }
+
+    function removeList() {
+      let formGroup = document.getElementById('listGroup')
+      let group = formGroup.children
+      let lastIndex = 0
+      for (let i = 0; i < group.length; ++i) {
+        if (group[i].nodeName === 'INPUT') {
+          lastIndex = i
+        }
+      }
+      if (lastIndex > 2) {
+        formGroup.removeChild(formGroup.childNodes[lastIndex])
+      }
+    }
+
+    document.getElementById('addButton').onclick = addList
+
+    document.getElementById('removeButton').onclick = removeList

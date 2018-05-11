@@ -12,9 +12,29 @@ router.get('/style.css', async ctx => {
   ctx.body = fs.readFileSync(path.resolve(__dirname, './public/style.css'))
 })
 
+router.get('/script.js', async ctx => {
+  ctx.set('content-type', 'text/javascript')
+  ctx.body = fs.readFileSync(path.resolve(__dirname, './public/script.js'))
+})
+
 router.get('/', async ctx => {
-  ctx.set('content-type', 'text/html')
-  ctx.body = fs.readFileSync(path.resolve(__dirname, './public/index.html'))
+  let random = []
+  for(let i = 0; i < 100; ++i) {
+    const randomInt = Math.round(Math.random() * Math.floor(4))
+    random.push(randomInt)
+  }
+  await ctx.render('index', {
+    categories: data.categories,
+    n: 0,
+    randVals: random,
+    icon: data.fontawesome,
+    data: data,
+    iconArray: data.fontawesomeArray
+  })
+})
+
+router.get('/post', async ctx => {
+  await ctx.render('post')
 })
 
 router.get('/category/:category', async ctx => {
@@ -25,6 +45,7 @@ router.get('/category/:category', async ctx => {
   await ctx.render('category', {
     title: ctx.params.category,
     n: 0,
+    categories: data.categories,
     icon: data.fontawesome[ctx.params.category]
   })
 })

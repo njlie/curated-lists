@@ -1,18 +1,10 @@
-var ilpBtn = $('#ilpBtn')
-var soundcloudBtn = $('#soundcloudBtn')
-var haroldBtn = $('#haroldBtn')
-
-ilpBtn.click(function () {
-  console.log('ILP button clicked')
-  $('#ilpCollapse').collapse('toggle')
-})
-
-soundcloudBtn.click(function () {
-  console.log('Soundcloud button clicked')
-  $('#soundcloudCollapse').collapse('toggle')
-})
-
-haroldBtn.click(function () {
-  console.log('Harold button clicked')
-  $('#haroldCollapse').collapse('toggle')
+$('.toolbar').on('click', function(event) {
+  console.log(event)
+  console.log(this)
+  console.log(rand)
+  if (this.classList.contains("active")) {
+    this.classList.remove('active')
+  } else {
+    this.classList.add('active')
+  }
 })

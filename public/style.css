@@ -1,3 +1,18 @@
+.toolbar {
+  display: inline-block;
+  transition: all .2s ease-in-out;
+  margin: 2rem;
+}
+
+.toolbar:hover {
+  transform: scale(1.25);
+}
+
+.toolbar.active {
+  transform: scale(1.25);
+  color: #009dffad;
+}
+
 .headerImage {
   display: inline-block;
   position: relative;
@@ -45,13 +60,13 @@
   text-align: center;
 }
 
-a, .headerimage {
+a.headerimage {
   color: black;
   text-decoration: none;
   transition: none;
 }
 
-a:hover, .headerimage {
+a.headerimage:hover {
   color: black;
   text-decoration: none;
   transform: scale(1.05);
@@ -61,4 +76,8 @@ a:hover, .headerimage {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+.form-control {
+  margin: 1rem 0;
 }
