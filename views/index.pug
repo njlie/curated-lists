@@ -48,16 +48,22 @@ html
       span(class="toolbar", data-index="3")
         i.fas.fa-lg.fa-gamepad(style="margin-right: 0.5rem;")
         h3(style="display: inline-block;") Games
-    div.container.border(style="text-align: left; overflow: scroll; height: 36rem;")
+    div.container.border(style="text-align: left; overflow: scroll;")
       div.accordion(id="accordionList" style="position: initial;")
         while n < 5
           div.card(data-category=icon[categories[randVals[n]]])
-            div.card-header(id="heading"+categories[randVals[n]]+n)
-              h5.md-0
-                i.fas.fa-sm(class="fa-"+icon[categories[randVals[n]]])
-                button.btn.btn-link.collapsed(type="button", data-toggle="collapse", data-target="#collapse"+categories[randVals[n]]+n, aria-expanded="false", aria-controls="collapse"+categories[randVals[n]]+n) List #{n}
+            div.card-header(id="heading"+categories[randVals[n]]+n style="padding: 0 1.25rem;")
+              h5.md-0(style="margin-bottom: 0")
+                div.row
+                  div.col-1
+                    i.fas.fa-lg(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0")
+                  div.col
+                    button.btn.btn-link.collapsed(type="button", data-toggle="collapse", data-target="#collapse"+categories[randVals[n]]+n, aria-expanded="false", aria-controls="collapse"+categories[randVals[n]]+n) List #{n}
             div.collapse(id="collapse"+categories[randVals[n]]+n, aria-labelledby="heading"+categories[randVals[n]]+(n++), data-parent="#accordionList")
               div.card-body List Content
+      div.border(id="hidden-content" style="text-align: center; margin: 1rem 0;")
+        h3 There is more here than at first glance...
+        h5 Start using #[a(href="https://medium.com/interledger-blog/replace-ads-with-web-monetization-239ce1930f3d") Web Monetization] to see the rest.
   script.
     var paid = false
     const rand = [#{randVals}]
@@ -115,6 +121,7 @@ html
       }).then(() => {
         paid = true
         document.getElementById('toolbar-container').append('Thanks for paying!')
+        document.getElementById('hidden-content').remove()
         document.getElementById('addPost').setAttribute('href', '/post')
         cards = []
         for(var index = 0; index < rand.length; ++index) {
