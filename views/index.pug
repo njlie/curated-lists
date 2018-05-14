@@ -19,10 +19,19 @@ html
               span.sr-only (current)
           li.nav-item
             a.nav-link(id="addPost") Add List
-          li.nav-item
-            a.nav-link(id="login" href="/account/signin") Sign In
-          li.nav-item
-            a.nav-link(id="create" href="/account/signup") Create an Account
+          //- li.nav-item
+          //-   a.nav-link(id="login" href="/account/signin") Sign In
+          //- li.nav-item
+          //-   a.nav-link(id="create" href="/account/signup") Create an Account
+          li.nav-item.dropdown
+            span.nav-link.dropdown-toggle(style="display: inline-block;" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+              i.fas.fa-user(style="margin-right: 1rem;")
+              a.nav-link(href="#" style="display: inline-block") Account
+            div.dropdown-menu(aria-labelledby="accountDropdown")
+              a.dropdown-item(id="accountSettings") Settings
+              a.dropdown-item(id="signout" href="#") Sign Out
+          //- li.nav-item
+          //-   a.nav-link(id="signout") Sign Out
     div.container(id="toolbar-container" style="text-align: center;")
       span(class="toolbar", data-index="0")
         i.fas.fa-lg.fa-music(style="margin-right: 0.5rem;")
@@ -40,7 +49,7 @@ html
         i.fas.fa-lg.fa-gamepad(style="margin-right: 0.5rem;")
         h3(style="display: inline-block;") Games
     div.container.border(style="text-align: left; overflow: scroll; height: 36rem;")
-      div.accordion(id="accordionList")
+      div.accordion(id="accordionList" style="position: initial;")
         while n < 5
           div.card(data-category=icon[categories[randVals[n]]])
             div.card-header(id="heading"+categories[randVals[n]]+n)
