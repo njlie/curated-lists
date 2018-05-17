@@ -51,16 +51,23 @@ html
     div.container(id="card-container" style="text-align: left; overflow: scroll;")
       //- div.accordion(id="accordionList" style="position: initial;")
       while n < 5
-        div.card(data-category=icon[categories[randVals[n]]] style="width: 36rem;")
-          div.card-header(style="padding: 0 1.25rem;")
+        div.card(data-category=icon[categories[randVals[n]]] style="width: 36rem; border: none;")
+          div.card-header(style="padding: 0 1.25rem; border: none; background-color: transparent;")
             h5.md-0(style="margin-bottom: 0")
               div.row
-                div.col-1
-                  i.fas.fa-lg(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0")
+                div.col-2
+                  i.fas.fa-3x(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0")
                 div.col
-                  button.btn.btn-link List #{n++}
-          div.card-body(style="height: 26rem;") List Content
-            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel enim nec est posuere ornare. Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis. In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti. Pellentesque nec erat massa. Vivamus porta justo elit, eget pellentesque nulla sagittis ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In lobortis, ex eget molestie pharetra, ante massa egestas magna, et cursus dolor mauris vitae felis. In non massa a erat pulvinar consequat. Nunc id consectetur leo, sit amet vehicula nisl. Morbi vitae suscipit tortor.
+                  h3(style="padding: 1.5rem 0;") List #{n++}
+          div.row
+            div.col-2
+            div.col
+              div.card-body(style="height: 26rem;")
+                ul
+                  li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  li Vestibulum vel enim nec est posuere ornare.
+                  li Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.
+                  li In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.
       div.border(id="hidden-content" style="text-align: center; margin: 1rem auto; width: 36rem;")
         h3 There is more here than at first glance...
         h5 Start using #[a(href="https://medium.com/interledger-blog/replace-ads-with-web-monetization-239ce1930f3d") Web Monetization] to see the rest.
@@ -91,17 +98,31 @@ html
           if (activated.includes(rand[index].toString()) || activated.length === 0) {
             var cat = categories[rand[index]]
             var card = `
-            <div class="card" style="width: 36rem;">
-              <div class="card-header">
+            <div class="card" style="width: 36rem; border: 0">
+              <div class="card-header" style="border: 0; background-color: transparent;">
                 <h5 class="md-0">
-                  <i class="fas fa-sm fa-${icons[rand[index]]}"></i>
-                  <button class="btn btn-link">
-                    List ${index}
-                  </button>
+                  <div class="row">
+                    <div class="col-2">
+                      <i class="fas fa-3x fa-${icons[rand[index]]}" style="padding: 0.6rem 0"></i>
+                    </div>
+                    <div class="col">
+                      <h3 style="padding: 1.5rem 0;">List ${index}</h3>
+                    </div>
+                  </div>
                 </h5>
               </div>
-              <div class="card-body" style="height: 26rem;">
-                List ContentLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel enim nec est posuere ornare. Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis. In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti. Pellentesque nec erat massa. Vivamus porta justo elit, eget pellentesque nulla sagittis ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In lobortis, ex eget molestie pharetra, ante massa egestas magna, et cursus dolor mauris vitae felis. In non massa a erat pulvinar consequat. Nunc id consectetur leo, sit amet vehicula nisl. Morbi vitae suscipit tortor.
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col">
+                  <div class="card-body" style="height: 26rem;">
+                    <ul>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                      <li>Vestibulum vel enim nec est posuere ornare.</li>
+                      <li>Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.</li>
+                      <li>In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>`
             cards.push(card)
@@ -124,17 +145,31 @@ html
         for(var index = 0; index < rand.length; ++index) {
           var cat = categories[rand[index]]
             var card = `
-            <div class="card" style="width: 36rem;">
-              <div class="card-header">
+            <div class="card" style="width: 36rem; border: 0;">
+              <div class="card-header" style="border: 0; background-color: transparent;">
                 <h5 class="md-0">
-                  <i class="fas fa-sm fa-${icons[rand[index]]}"></i>
-                  <button class="btn btn-link">
-                    List ${index}
-                  </button>
+                  <div class="row">
+                    <div class="col-2">
+                      <i class="fas fa-3x fa-${icons[rand[index]]}" style="padding: 0.6rem 0;"></i>
+                    </div>
+                    <div class="col">
+                      <h3 style="padding: 1.5rem 0;">List ${index}</h3>
+                    </div>
+                  </div>
                 </h5>
               </div>
-              <div class="card-body" style="height: 26rem;">
-                List ContentLorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vel enim nec est posuere ornare. Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis. In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti. Pellentesque nec erat massa. Vivamus porta justo elit, eget pellentesque nulla sagittis ut. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In lobortis, ex eget molestie pharetra, ante massa egestas magna, et cursus dolor mauris vitae felis. In non massa a erat pulvinar consequat. Nunc id consectetur leo, sit amet vehicula nisl. Morbi vitae suscipit tortor.
+              <div class="row">
+                <div class="col-2"></div>
+                <div class="col">
+                  <div class="card-body" style="height: 26rem;">
+                    <ul>
+                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                      <li>Vestibulum vel enim nec est posuere ornare.</li>
+                      <li>Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.</li>
+                      <li>In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>`
           cards.push(card)
