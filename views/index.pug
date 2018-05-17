@@ -54,7 +54,10 @@ html
         div.card(data-category=icon[categories[randVals[n]]] style="width: 18rem;")
           div.card-header(style="padding: 0 1.25rem;")
             h5.md-0
-              i.fas.fa-3x(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0") List #{n++}
+              div.row
+                div.col-1
+                  i.fas.fa-sm(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0")
+                div.col List #{n++}
           div.card-body
             ul
               li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
