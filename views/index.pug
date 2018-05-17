@@ -51,23 +51,16 @@ html
     div.container(id="card-container" style="text-align: left; overflow: scroll;")
       //- div.accordion(id="accordionList" style="position: initial;")
       while n < 5
-        div.card(data-category=icon[categories[randVals[n]]] style="width: 36rem; border: none;")
-          div.card-header(style="padding: 0 1.25rem; border: none; background-color: transparent;")
-            h5.md-0(style="margin-bottom: 0")
-              div.row
-                div.col-2
-                  i.fas.fa-3x(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0")
-                div.col
-                  h3(style="padding: 1.5rem 0;") List #{n++}
-          div.row
-            div.col-2
-            div.col
-              div.card-body(style="height: 26rem;")
-                ul
-                  li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  li Vestibulum vel enim nec est posuere ornare.
-                  li Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.
-                  li In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.
+        div.card(data-category=icon[categories[randVals[n]]] style="width: 18rem;")
+          div.card-header(style="padding: 0 1.25rem;")
+            h5.md-0
+              i.fas.fa-3x(class="fa-"+icon[categories[randVals[n]]] style="padding: 0.6rem 0") List #{n++}
+          div.card-body
+            ul
+              li Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              li Vestibulum vel enim nec est posuere ornare.
+              li Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.
+              li In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.
       div.border(id="hidden-content" style="text-align: center; margin: 1rem auto; width: 36rem;")
         h3 There is more here than at first glance...
         h5 Start using #[a(href="https://medium.com/interledger-blog/replace-ads-with-web-monetization-239ce1930f3d") Web Monetization] to see the rest.
