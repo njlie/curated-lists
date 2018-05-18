@@ -95,38 +95,43 @@ html
         if (paid) {
           max = rand.length
         }
+        var f = 0
         for(var index = 0; index < max; ++index) {
+          if (f === 0) {
+            cards.push('<div class="row justify-content-center">')
+          }
           if (activated.includes(rand[index].toString()) || activated.length === 0) {
             var cat = categories[rand[index]]
             var card = `
-            <div class="card" style="width: 36rem; border: 0">
-              <div class="card-header" style="border: 0; background-color: transparent;">
+            <div class="card" style="width: 18rem; margin: 1rem;" data-category=${icons[rand[index]]}>
+              <div class="card-header" style="padding: 0 1.25rem;">
                 <h5 class="md-0">
                   <div class="row">
-                    <div class="col-2">
-                      <i class="fas fa-3x fa-${icons[rand[index]]}" style="padding: 0.6rem 0"></i>
+                    <div class="col-1">
+                      <i class="fas fa-sm fa-${icons[rand[index]]}" style="padding: 0.6rem 0"></i>
                     </div>
                     <div class="col">
-                      <h3 style="padding: 1.5rem 0;">List ${index}</h3>
+                      <button class="btn btn-link">List ${index}</button>
                     </div>
                   </div>
                 </h5>
               </div>
-              <div class="row">
-                <div class="col-2"></div>
-                <div class="col">
-                  <div class="card-body" style="height: 26rem;">
-                    <ul>
-                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                      <li>Vestibulum vel enim nec est posuere ornare.</li>
-                      <li>Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.</li>
-                      <li>In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.</li>
-                    </ul>
-                  </div>
-                </div>
+              <div class="card-body">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Vestibulum vel enim nec est posuere ornare.</li>
+                  <li>Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.</li>
+                  <li>In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.</li>
+                </ul>
               </div>
             </div>`
             cards.push(card)
+            f++
+          }
+          console.log('f: ', f)
+          if(f === 3) {
+            f = 0
+            cards.push('</div>')
           }
         }
         const cardHTML = cards.join('')
@@ -143,37 +148,42 @@ html
         document.getElementById('hidden-content').remove()
         document.getElementById('addPost').setAttribute('href', '/post')
         cards = []
+        var f = 0
         for(var index = 0; index < rand.length; ++index) {
+          if (f === 0) {
+            cards.push('<div class="row justify-content-center">')
+          }
           var cat = categories[rand[index]]
             var card = `
-            <div class="card" style="width: 36rem; border: 0;">
-              <div class="card-header" style="border: 0; background-color: transparent;">
+            <div class="card" style="width: 18rem; margin: 1rem;" data-category=${icons[rand[index]]}>
+              <div class="card-header" style="padding: 0 1.25 rem;">
                 <h5 class="md-0">
                   <div class="row">
-                    <div class="col-2">
-                      <i class="fas fa-3x fa-${icons[rand[index]]}" style="padding: 0.6rem 0;"></i>
+                    <div class="col-1">
+                      <i class="fas fa-sm fa-${icons[rand[index]]}" style="padding: 0.6rem 0;"></i>
                     </div>
                     <div class="col">
-                      <h3 style="padding: 1.5rem 0;">List ${index}</h3>
+                      <button class="btn btn-link">List ${index}</button>
                     </div>
                   </div>
                 </h5>
               </div>
-              <div class="row">
-                <div class="col-2"></div>
-                <div class="col">
-                  <div class="card-body" style="height: 26rem;">
-                    <ul>
-                      <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                      <li>Vestibulum vel enim nec est posuere ornare.</li>
-                      <li>Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.</li>
-                      <li>In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.</li>
-                    </ul>
-                  </div>
-                </div>
+              <div class="card-body">
+                <ul>
+                  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                  <li>Vestibulum vel enim nec est posuere ornare.</li>
+                  <li>Pellentesque porta ligula in felis posuere, vel vehicula arcu sagittis.</li>
+                  <li>In a turpis laoreet, pretium augue vitae, posuere velit. Suspendisse potenti.</li>
+                </ul>
               </div>
             </div>`
           cards.push(card)
+          f++
+
+          if (f === 3) {
+            f = 0
+            cards.push('</div>')
+          }
         }
         const cardHTML = cards.join('')
 
